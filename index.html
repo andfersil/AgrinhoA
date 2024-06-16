@@ -4,7 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnologias do Campo</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        #home {
+            text-align: center;
+        }
+
+        #home img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-top: 1em;
+        }
+
+        article {
+            margin: 2em 0;
+        }
+
+        article img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        #noticias .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #noticias .news-container article {
+            width: 30%;
+            background-color: #fff;
+            padding: 1em;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 1em 0;
+        }
+
+        #contato form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contato label {
+            margin: 0.5em 0 0.2em;
+        }
+
+        #contato input, #contato textarea {
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contato button {
+            padding: 0.7em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contato button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,7 +134,7 @@
     <section id="home">
         <h2>Bem-vindo ao nosso site</h2>
         <p>Explore as últimas inovações tecnológicas que estão transformando o campo.</p>
-        <img src="images/farm.jpg" alt="Tecnologia no campo">
+        <img src="https://via.placeholder.com/600x400" alt="Tecnologia no campo">
     </section>
 
     <section id="tecnologias">
@@ -30,17 +142,17 @@
         <article>
             <h3>Máquinas Agrícolas Inteligentes</h3>
             <p>Máquinas equipadas com IA para otimização de colheitas e plantio.</p>
-            <img src="images/machine.jpg" alt="Máquinas Agrícolas Inteligentes">
+            <img src="https://via.placeholder.com/500x300" alt="Máquinas Agrícolas Inteligentes">
         </article>
         <article>
             <h3>Sensores de Solo</h3>
             <p>Sensores que monitoram a qualidade e a umidade do solo em tempo real.</p>
-            <img src="images/soil_sensor.jpg" alt="Sensores de Solo">
+            <img src="https://via.placeholder.com/500x300" alt="Sensores de Solo">
         </article>
         <article>
             <h3>Sistemas de Irrigação Automatizados</h3>
             <p>Sistemas que regulam a irrigação conforme a necessidade das plantas.</p>
-            <img src="images/irrigation.jpg" alt="Sistemas de Irrigação Automatizados">
+            <img src="https://via.placeholder.com/500x300" alt="Sistemas de Irrigação Automatizados">
         </article>
     </section>
 
@@ -82,144 +194,25 @@
         <p>&copy; 2024 Tecnologias do Campo. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("contact-form");
+
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+
+                if (name && email && message) {
+                    alert(`Obrigado pela sua mensagem, ${name}!`);
+                    contactForm.reset();
+                } else {
+                    alert("Por favor, preencha todos os campos.");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1em 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    padding: 2em;
-}
-
-#home {
-    text-align: center;
-}
-
-#home img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin-top: 1em;
-}
-
-article {
-    margin: 2em 0;
-}
-
-article img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-}
-
-#noticias .news-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-#noticias .news-container article {
-    width: 30%;
-    background-color: #fff;
-    padding: 1em;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 1em 0;
-}
-
-#contato form {
-    display: flex;
-    flex-direction: column;
-}
-
-#contato label {
-    margin: 0.5em 0 0.2em;
-}
-
-#contato input, #contato textarea {
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#contato button {
-    padding: 0.7em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#contato button:hover {
-    background-color: #45a049;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-}
-document.addEventListener("DOMContentLoaded", function() {
-    const contactForm = document.getElementById("contact-form");
-
-    contactForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-
-        if (name && email && message) {
-            alert(`Obrigado pela sua mensagem, ${name}!`);
-            contactForm.reset();
-        } else {
-            alert("Por favor, preencha todos os campos.");
-        }
-    });
-});
-projeto/
-├── index.html
-├── style.css
-├── script.js
-└── images/
-    ├── farm.jpg
-    ├── machine.jpg
-    ├── soil_sensor.jpg
-    ├── irrigation.jpg
