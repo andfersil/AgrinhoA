@@ -1,14 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologias do Campo</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/img/Logo_legal.png" type="image/png">
-    <title></title>
-    <h1>uhyftfyhyeexwsz</h1>
 </head>
 <body>
-    
+    <header>
+        <h1>Tecnologias do Campo</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Bem-vindo ao nosso site</h2>
+        <p>Explore as últimas inovações tecnológicas que estão transformando o campo.</p>
+        <img src="images/farm.jpg" alt="Tecnologia no campo">
+    </section>
+
+    <section id="tecnologias">
+        <h2>Tecnologias do Campo</h2>
+        <article>
+            <h3>Máquinas Agrícolas Inteligentes</h3>
+            <p>Máquinas equipadas com IA para otimização de colheitas e plantio.</p>
+            <img src="images/machine.jpg" alt="Máquinas Agrícolas Inteligentes">
+        </article>
+        <article>
+            <h3>Sensores de Solo</h3>
+            <p>Sensores que monitoram a qualidade e a umidade do solo em tempo real.</p>
+            <img src="images/soil_sensor.jpg" alt="Sensores de Solo">
+        </article>
+        <article>
+            <h3>Sistemas de Irrigação Automatizados</h3>
+            <p>Sistemas que regulam a irrigação conforme a necessidade das plantas.</p>
+            <img src="images/irrigation.jpg" alt="Sistemas de Irrigação Automatizados">
+        </article>
+    </section>
+
+    <section id="noticias">
+        <h2>Últimas Notícias</h2>
+        <div class="news-container">
+            <article>
+                <h3>Nova Tecnologia de Drones</h3>
+                <p>Drones estão sendo usados para monitoramento e pulverização de culturas.</p>
+            </article>
+            <article>
+                <h3>Aplicativos para Gestão Agrícola</h3>
+                <p>Aplicativos que ajudam os agricultores a gerenciar suas fazendas de forma eficiente.</p>
+            </article>
+            <article>
+                <h3>Energia Renovável no Campo</h3>
+                <p>Implementação de painéis solares e turbinas eólicas em fazendas.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="contact-form">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tecnologias do Campo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 2em;
+}
+
+#home {
+    text-align: center;
+}
+
+#home img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-top: 1em;
+}
+
+article {
+    margin: 2em 0;
+}
+
+article img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+#noticias .news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#noticias .news-container article {
+    width: 30%;
+    background-color: #fff;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 1em 0;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contato label {
+    margin: 0.5em 0 0.2em;
+}
+
+#contato input, #contato textarea {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contato button {
+    padding: 0.7em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contato button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const contactForm = document.getElementById("contact-form");
+
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        if (name && email && message) {
+            alert(`Obrigado pela sua mensagem, ${name}!`);
+            contactForm.reset();
+        } else {
+            alert("Por favor, preencha todos os campos.");
+        }
+    });
+});
+projeto/
+├── index.html
+├── style.css
+├── script.js
+└── images/
+    ├── farm.jpg
+    ├── machine.jpg
+    ├── soil_sensor.jpg
+    ├── irrigation.jpg
