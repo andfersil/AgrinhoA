@@ -9,13 +9,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #121212;
+            color: #e0e0e0;
         }
 
         header {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #1e1e1e;
+            color: #ffffff;
             padding: 1em 0;
             text-align: center;
         }
@@ -27,6 +27,7 @@
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
 
         nav ul li {
@@ -35,8 +36,13 @@
         }
 
         nav ul li a {
-            color: white;
+            color: #bb86fc;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
         }
 
         section {
@@ -52,6 +58,7 @@
             max-width: 600px;
             height: auto;
             margin-top: 1em;
+            border-radius: 10px;
         }
 
         article {
@@ -62,6 +69,7 @@
             width: 100%;
             max-width: 500px;
             height: auto;
+            border-radius: 10px;
         }
 
         #noticias .news-container {
@@ -72,10 +80,11 @@
 
         #noticias .news-container article {
             width: 30%;
-            background-color: #fff;
+            background-color: #1e1e1e;
             padding: 1em;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             margin: 1em 0;
+            border-radius: 10px;
         }
 
         #contato form {
@@ -87,16 +96,19 @@
             margin: 0.5em 0 0.2em;
         }
 
-        #contato input, #contato textarea {
+        #contato input,
+        #contato textarea {
             padding: 0.5em;
             margin-bottom: 1em;
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 5px;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
         }
 
         #contato button {
             padding: 0.7em;
-            background-color: #4CAF50;
+            background-color: #bb86fc;
             color: white;
             border: none;
             border-radius: 5px;
@@ -104,12 +116,12 @@
         }
 
         #contato button:hover {
-            background-color: #45a049;
+            background-color: #9e79cc;
         }
 
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #1e1e1e;
+            color: #ffffff;
             text-align: center;
             padding: 1em 0;
             position: relative;
@@ -133,7 +145,7 @@
 
     <section id="home">
         <h2>Bem-vindo ao nosso site</h2>
-        <p>Explore as últimas inovações tecnológicas que estão transformando o campo.</p>
+        <p>Explore as últimas inovações tecnológicas que estão transformando o campo. A tecnologia tem revolucionado a agricultura, trazendo soluções que aumentam a produtividade e a eficiência, ao mesmo tempo em que reduzem os custos e o impacto ambiental. Descubra como essas tecnologias podem transformar a sua vida e o seu trabalho no campo.</p>
         <img src="https://via.placeholder.com/600x400" alt="Tecnologia no campo">
     </section>
 
@@ -141,17 +153,17 @@
         <h2>Tecnologias do Campo</h2>
         <article>
             <h3>Máquinas Agrícolas Inteligentes</h3>
-            <p>Máquinas equipadas com IA para otimização de colheitas e plantio.</p>
+            <p>As máquinas agrícolas inteligentes são equipadas com inteligência artificial e sistemas avançados de controle. Elas são capazes de realizar tarefas como plantio, colheita e pulverização com alta precisão, reduzindo o desperdício e aumentando a eficiência. Essas máquinas também podem ser conectadas a redes de dados para monitoramento remoto e manutenção preditiva.</p>
             <img src="https://via.placeholder.com/500x300" alt="Máquinas Agrícolas Inteligentes">
         </article>
         <article>
             <h3>Sensores de Solo</h3>
-            <p>Sensores que monitoram a qualidade e a umidade do solo em tempo real.</p>
+            <p>Sensores de solo são dispositivos que medem a umidade, a temperatura e a composição do solo em tempo real. Eles ajudam os agricultores a entender melhor as condições do solo e a tomar decisões informadas sobre irrigação e fertilização. Isso resulta em um uso mais eficiente dos recursos e em plantas mais saudáveis e produtivas.</p>
             <img src="https://via.placeholder.com/500x300" alt="Sensores de Solo">
         </article>
         <article>
             <h3>Sistemas de Irrigação Automatizados</h3>
-            <p>Sistemas que regulam a irrigação conforme a necessidade das plantas.</p>
+            <p>Os sistemas de irrigação automatizados utilizam sensores e controladores para fornecer a quantidade exata de água que as plantas precisam, quando precisam. Esses sistemas podem ser programados para operar em horários específicos e ajustados com base nas condições climáticas e nos dados do solo. Isso ajuda a economizar água e a garantir que as plantas recebam a hidratação adequada.</p>
             <img src="https://via.placeholder.com/500x300" alt="Sistemas de Irrigação Automatizados">
         </article>
     </section>
@@ -161,15 +173,15 @@
         <div class="news-container">
             <article>
                 <h3>Nova Tecnologia de Drones</h3>
-                <p>Drones estão sendo usados para monitoramento e pulverização de culturas.</p>
+                <p>Drones estão sendo usados para monitoramento e pulverização de culturas. Eles permitem a observação detalhada das plantações, identificando áreas que precisam de atenção especial. Com câmeras de alta resolução e sensores avançados, os drones ajudam a detectar doenças, pragas e deficiências nutricionais nas plantas.</p>
             </article>
             <article>
                 <h3>Aplicativos para Gestão Agrícola</h3>
-                <p>Aplicativos que ajudam os agricultores a gerenciar suas fazendas de forma eficiente.</p>
+                <p>Aplicativos móveis e softwares de gestão agrícola estão se tornando ferramentas essenciais para os agricultores modernos. Eles ajudam a monitorar todas as atividades da fazenda, desde o plantio até a colheita, incluindo o controle de estoque, a gestão financeira e a análise de dados. Esses aplicativos permitem uma tomada de decisão mais informada e estratégica.</p>
             </article>
             <article>
                 <h3>Energia Renovável no Campo</h3>
-                <p>Implementação de painéis solares e turbinas eólicas em fazendas.</p>
+                <p>A implementação de fontes de energia renovável, como painéis solares e turbinas eólicas, está ganhando popularidade no setor agrícola. Essas tecnologias não apenas reduzem os custos com energia, mas também tornam as operações agrícolas mais sustentáveis. A energia renovável pode ser usada para alimentar equipamentos agrícolas, sistemas de irrigação e outras infraestruturas da fazenda.</p>
             </article>
         </div>
     </section>
