@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,143 +9,124 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #121212;
+            color: #e0e0e0;
         }
 
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
+            background-color: #1b1b1b;
+            color: #00ff00;
+            padding: 1em 0;
             text-align: center;
         }
 
+        header h1 {
+            margin: 0;
+        }
+
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
+            text-align: center;
         }
 
         nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin: 0 1em;
         }
 
         nav ul li a {
-            color: white;
+            color: #00ff00;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
         }
 
         section {
-            padding: 20px;
+            padding: 2em;
         }
 
-        .carousel {
+        #home {
+            text-align: center;
+        }
+
+        #home img {
             width: 100%;
-            overflow: hidden;
+            max-width: 600px;
+            height: auto;
+            margin-top: 1em;
+            border-radius: 10px;
         }
 
-        .carousel-slide {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        article {
+            margin: 2em 0;
         }
 
-        .carousel-slide img {
+        article img {
             width: 100%;
-            border-radius: 5px;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
         }
 
-        #tech-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        #tech-list li {
-            background-color: #f4f4f4;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        .gallery-container {
+        #noticias .news-container {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: space-around;
         }
 
-        .gallery-container img {
+        #noticias .news-container article {
             width: 30%;
-            margin: 10px;
+            background-color: #1b1b1b;
+            padding: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin: 1em 0;
+            border-radius: 10px;
+        }
+
+        #contato form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contato label {
+            margin: 0.5em 0 0.2em;
+        }
+
+        #contato input,
+        #contato textarea {
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #444;
             border-radius: 5px;
-            transition: transform 0.3s;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
         }
 
-        .gallery-container img:hover {
-            transform: scale(1.1);
-        }
-
-        #news-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .news-item {
-            background-color: #f4f4f4;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        #blog-posts {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .blog-post {
-            background-color: #f4f4f4;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        #map-container {
-            height: 400px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form label {
-            margin-top: 10px;
-        }
-
-        form input, form textarea {
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ddd;
-        }
-
-        form button {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #4CAF50;
+        #contato button {
+            padding: 0.7em;
+            background-color: #00ff00;
             color: white;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
 
-        form button:hover {
-            background-color: #45a049;
+        #contato button:hover {
+            background-color: #009900;
         }
 
         footer {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #1b1b1b;
+            color: #00ff00;
             text-align: center;
-            padding: 10px 0;
+            padding: 1em 0;
             position: relative;
-            bottom: 0;
             width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
@@ -154,75 +135,71 @@
         <h1>Tecnologias do Campo</h1>
         <nav>
             <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#tech">Tecnologias</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#news">Notícias</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
-        <h2>Bem-vindo ao site de Tecnologias do Campo</h2>
-        <p>Descubra as mais recentes inovações no campo da agricultura.</p>
-        <div class="carousel">
-            <div class="carousel-slide">
-                <img src="images/drone.jpg" alt="Drones para Monitoramento">
-                <img src="images/sensor.jpg" alt="Sensores de Umidade do Solo">
-                <img src="images/tractor.jpg" alt="Tratores Autônomos">
-            </div>
+        <h2>Bem-vindo ao nosso site</h2>
+        <p>Explore as últimas inovações tecnológicas que estão transformando o campo. A tecnologia tem revolucionado a agricultura, trazendo soluções que aumentam a produtividade e a eficiência, ao mesmo tempo em que reduzem os custos e o impacto ambiental. Descubra como essas tecnologias podem transformar a sua vida e o seu trabalho no campo.</p>
+        <img src="https://via.placeholder.com/600x400" alt="Tecnologia no campo">
+    </section>
+
+    <section id="tecnologias">
+        <h2>Tecnologias do Campo</h2>
+        <article>
+            <h3>Máquinas Agrícolas Inteligentes</h3>
+            <p>As máquinas agrícolas inteligentes são equipadas com inteligência artificial e sistemas avançados de controle. Elas são capazes de realizar tarefas como plantio, colheita e pulverização com alta precisão, reduzindo o desperdício e aumentando a eficiência. Essas máquinas também podem ser conectadas a redes de dados para monitoramento remoto e manutenção preditiva.</p>
+            <img src="https://via.placeholder.com/500x300" alt="Máquinas Agrícolas Inteligentes">
+        </article>
+        <article>
+            <h3>Sensores de Solo</h3>
+            <p>Sensores de solo são dispositivos que medem a umidade, a temperatura e a composição do solo em tempo real. Eles ajudam os agricultores a entender melhor as condições do solo e a tomar decisões informadas sobre irrigação e fertilização. Isso resulta em um uso mais eficiente dos recursos e em plantas mais saudáveis e produtivas.</p>
+            <img src="https://via.placeholder.com/500x300" alt="Sensores de Solo">
+        </article>
+        <article>
+            <h3>Sistemas de Irrigação Automatizados</h3>
+            <p>Os sistemas de irrigação automatizados utilizam sensores e controladores para fornecer a quantidade exata de água que as plantas precisam, quando precisam. Esses sistemas podem ser programados para operar em horários específicos e ajustados com base nas condições climáticas e nos dados do solo. Isso ajuda a economizar água e a garantir que as plantas recebam a hidratação adequada.</p>
+            <img src="https://via.placeholder.com/500x300" alt="Sistemas de Irrigação Automatizados">
+        </article>
+    </section>
+
+    <section id="noticias">
+        <h2>Últimas Notícias</h2>
+        <div class="news-container">
+            <article>
+                <h3>Nova Tecnologia de Drones</h3>
+                <p>Drones estão sendo usados para monitoramento e pulverização de culturas. Eles permitem a observação detalhada das plantações, identificando áreas que precisam de atenção especial. Com câmeras de alta resolução e sensores avançados, os drones ajudam a detectar doenças, pragas e deficiências nutricionais nas plantas.</p>
+            </article>
+            <article>
+                <h3>Aplicativos para Gestão Agrícola</h3>
+                <p>Aplicativos móveis e softwares de gestão agrícola estão se tornando ferramentas essenciais para os agricultores modernos. Eles ajudam a monitorar todas as atividades da fazenda, desde o plantio até a colheita, incluindo o controle de estoque, a gestão financeira e a análise de dados. Esses aplicativos permitem uma tomada de decisão mais informada e estratégica.</p>
+            </article>
+            <article>
+                <h3>Energia Renovável no Campo</h3>
+                <p>A implementação de fontes de energia renovável, como painéis solares e turbinas eólicas, está ganhando popularidade no setor agrícola. Essas tecnologias não apenas reduzem os custos com energia, mas também tornam as operações agrícolas mais sustentáveis. A energia renovável pode ser usada para alimentar equipamentos agrícolas, sistemas de irrigação e outras infraestruturas da fazenda.</p>
+            </article>
         </div>
     </section>
 
-    <section id="tech">
-        <h2>Tecnologias Agrícolas</h2>
-        <ul id="tech-list">
-            <!-- Lista de tecnologias será preenchida por JavaScript -->
-        </ul>
-    </section>
-
-    <section id="gallery">
-        <h2>Galeria de Imagens</h2>
-        <div class="gallery-container">
-            <img src="images/drone.jpg" alt="Drones para Monitoramento">
-            <img src="images/sensor.jpg" alt="Sensores de Umidade do Solo">
-            <img src="images/tractor.jpg" alt="Tratores Autônomos">
-        </div>
-    </section>
-
-    <section id="news">
-        <h2>Notícias Recentes</h2>
-        <div id="news-container">
-            <!-- Notícias serão preenchidas por JavaScript -->
-        </div>
-    </section>
-
-    <section id="blog">
-        <h2>Blog</h2>
-        <div id="blog-posts">
-            <!-- Posts do blog serão preenchidos por JavaScript -->
-        </div>
-    </section>
-
-    <section id="map">
-        <h2>Mapa Interativo</h2>
-        <div id="map-container"></div>
-    </section>
-
-    <section id="contact">
+    <section id="contato">
         <h2>Contato</h2>
         <form id="contact-form">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required>
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+
             <label for="message">Mensagem:</label>
             <textarea id="message" name="message" required></textarea>
+
             <button type="submit">Enviar</button>
         </form>
-        <div id="form-response"></div>
     </section>
 
     <footer>
@@ -230,88 +207,23 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const techList = document.getElementById('tech-list');
-            const technologies = [
-                'Drones para Monitoramento',
-                'Sensores de Umidade do Solo',
-                'Tratores Autônomos',
-                'Sistemas de Irrigação Inteligente',
-                'Análise de Dados Agrícolas'
-            ];
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("contact-form");
 
-            technologies.forEach(tech => {
-                const li = document.createElement('li');
-                li.textContent = tech;
-                techList.appendChild(li);
-            });
-
-            const contactForm = document.getElementById('contact-form');
-            contactForm.addEventListener('submit', function(event) {
+            contactForm.addEventListener("submit", function(event) {
                 event.preventDefault();
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-                const responseDiv = document.getElementById('form-response');
-                responseDiv.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada com sucesso.</p>`;
-                contactForm.reset();
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+
+                if (name && email && message) {
+                    alert(`Obrigado pela sua mensagem, ${name}!`);
+                    contactForm.reset();
+                } else {
+                    alert("Por favor, preencha todos os campos.");
+                }
             });
-
-            // Carrossel de imagens
-            let carouselIndex = 0;
-            const carouselSlide = document.querySelector('.carousel-slide');
-            const images = document.querySelectorAll('.carousel-slide img');
-            function nextSlide() {
-                carouselIndex = (carouselIndex + 1) % images.length;
-                carouselSlide.style.transform = `translateX(${-carouselIndex * 100}%)`;
-            }
-            setInterval(nextSlide, 3000);
-
-            // Fetch and display news articles
-            fetchNews();
-            function fetchNews() {
-                const newsContainer = document.getElementById('news-container');
-                const newsArticles = [
-                    { title: 'Novos Drones para Agricultura', content: 'Os drones estão revolucionando a agricultura.' },
-                    { title: 'Sensores de Umidade do Solo Avançados', content: 'Sensores ajudam a monitorar a umidade com precisão.' },
-                    { title: 'Tratores Autônomos Ganham Popularidade', content: 'Tratores autônomos estão se tornando comuns nas fazendas.' }
-                ];
-
-                newsArticles.forEach(article => {
-                    const newsItem = document.createElement('div');
-                    newsItem.classList.add('news-item');
-                    newsItem.innerHTML = `<h3>${article.title}</h3><p>${article.content}</p>`;
-                    newsContainer.appendChild(newsItem);
-                });
-            }
-
-            // Fetch and display blog posts
-            fetchBlogPosts();
-            function fetchBlogPosts() {
-                const blogContainer = document.getElementById('blog-posts');
-                const blogPosts = [
-                    { title: 'A Importância dos Drones', content: 'Drones estão transformando a agricultura moderna.' },
-                    { title: 'Como Sensores de Solo Funcionam', content: 'Sensores de solo permitem uma melhor gestão da irrigação.' },
-                    { title: 'Futuro dos Tratores Autônomos', content: 'Tratores autônomos são o futuro da agricultura.' }
-                ];
-
-                blogPosts.forEach(post => {
-                    const blogPost = document.createElement('div');
-                    blogPost.classList.add('blog-post');
-                    blogPost.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
-                    blogContainer.appendChild(blogPost);
-                });
-            }
-
-            // Initialize map
-            mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
-            const map = new mapboxgl.Map({
-                container: 'map-container',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [-74.5, 40],
-                zoom: 9
-            });
-
         });
     </script>
 </body>
