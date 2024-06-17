@@ -1,191 +1,166 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnologias do Campo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #2ecc71; /* verde */
-            color: #ffffff; /* branco */
-        }
-
-        header {
-            background-color: #2ecc71; /* verde */
-            color: #ffffff; /* branco */
-            padding: 1em 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 1em;
-        }
-
-        nav ul li a {
-            color: #ffffff; /* branco */
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            color: #f2f2f2; /* tom mais claro de branco para hover */
-        }
-
-        section {
-            padding: 2em;
-        }
-
-        #home img,
-        article img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        #noticias .news-container article {
-            width: 30%;
-            background-color: #ffffff; /* branco */
-            padding: 1em;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            margin: 1em 0;
-            border-radius: 10px;
-        }
-
-        #contato input,
-        #contato textarea {
-            padding: 0.5em;
-            margin-bottom: 1em;
-            border: 1px solid #2ecc71; /* verde */
-            border-radius: 5px;
-            background-color: #ffffff; /* branco */
-            color: #2ecc71; /* verde */
-        }
-
-        #contato button {
-            padding: 0.7em;
-            background-color: #2ecc71; /* verde */
-            color: #ffffff; /* branco */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #contato button:hover {
-            background-color: #27ae60; /* tom mais escuro de verde para hover */
-        }
-
-        footer {
-            background-color: #ffffff; /* branco */
-            color: #2ecc71; /* verde */
-            text-align: center;
-            padding: 1em 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Tecnologias do Campo</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#tecnologias">Tecnologias</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#tech">Tecnologias</a></li>
+                <li><a href="#contact">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
-        <h2>Bem-vindo ao nosso site</h2>
-        <p>Explore as últimas inovações tecnológicas que estão transformando o campo. A tecnologia tem revolucionado a agricultura, trazendo soluções que aumentam a produtividade e a eficiência, ao mesmo tempo em que reduzem os custos e o impacto ambiental. Descubra como essas tecnologias podem transformar a sua vida e o seu trabalho no campo.</p>
-        <img src="img/depositphotos_433024064-stock-photo-farmer-preparing-fly-drones-survey.jpg" alt="fazenda, drone">
+        <h2>Bem-vindo ao site de Tecnologias do Campo</h2>
+        <p>Descubra as mais recentes inovações no campo da agricultura.</p>
     </section>
 
-    <section id="tecnologias">
-        <h2>Tecnologias do Campo</h2>
-        <article>
-            <h3>Máquinas Agrícolas Inteligentes</h3>
-            <p>As máquinas agrícolas inteligentes são equipadas com inteligência artificial e sistemas avançados de controle. Elas são capazes de realizar tarefas como plantio, colheita e pulverização com alta precisão, reduzindo o desperdício e aumentando a eficiência. Essas máquinas também podem ser conectadas a redes de dados para monitoramento remoto e manutenção preditiva.</p>
-            <img src="img/maquina-agricola-jacto1.webp" alt="Máquinas Agrícolas Inteligentes">
-        </article>
-        <article>
-            <h3>Sensores de Solo</h3>
-            <p>Sensores de solo são dispositivos que medem a umidade, a temperatura e a composição do solo em tempo real. Eles ajudam os agricultores a entender melhor as condições do solo e a tomar decisões informadas sobre irrigação e fertilização. Isso resulta em um uso mais eficiente dos recursos e em plantas mais saudáveis e produtivas.</p>
-            <img src="img/images.jpeg" alt="Sensores de Solo">
-        </article>
-        <article>
-            <h3>Sistemas de Irrigação Automatizados</h3>
-            <p>Os sistemas de irrigação automatizados utilizam sensores e controladores para fornecer a quantidade exata de água que as plantas precisam, quando precisam. Esses sistemas podem ser programados para operar em horários específicos e ajustados com base nas condições climáticas e nos dados do solo. Isso ajuda a economizar água e a garantir que as plantas recebam a hidratação adequada.</p>
-            <img src="img/images (1).jpeg" alt="Sistemas de Irrigação Automatizados">
-        </article>
+    <section id="tech">
+        <h2>Tecnologias Agrícolas</h2>
+        <ul id="tech-list">
+            <!-- Lista de tecnologias será preenchida por JavaScript -->
+        </ul>
     </section>
 
-    <section id="noticias">
-        <h2>Últimas Notícias</h2>
-        <div class="news-container">
-            <article>
-                <h3>Nova Tecnologia de Drones</h3>
-                <p>Drones estão sendo usados para monitoramento e pulverização de culturas. Eles permitem a observação detalhada das plantações, identificando áreas que precisam de atenção especial. Com câmeras de alta resolução e sensores avançados, os drones ajudam a detectar doenças, pragas e deficiências nutricionais nas plantas.</p>
-            </article>
-            <article>
-                <h3>Aplicativos para Gestão Agrícola</h3>
-                <p>Aplicativos móveis e softwares de gestão agrícola estão se tornando ferramentas essenciais para os agricultores modernos. Eles ajudam a monitorar todas as atividades da fazenda, desde o plantio até a colheita, incluindo o controle de estoque, a gestão financeira e a análise de dados. Esses aplicativos permitem uma tomada de decisão mais informada e estratégica.</p>
-            </article>
-            <article>
-                <h3>Energia Renovável no Campo</h3>
-                <p>A implementação de fontes de energia renovável, como painéis solares e turbinas eólicas, está ganhando popularidade no setor agrícola. Essas tecnologias não apenas reduzem os custos com energia, mas também tornam as operações agrícolas mais sustentáveis. A energia renovável pode ser usada para alimentar equipamentos agrícolas, sistemas de irrigação e outras infraestruturas da fazenda.</p>
-            </article>
-        </div>
-    </section>
-
-    <section id="contato">
+    <section id="contact">
         <h2>Contato</h2>
         <form id="contact-form">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required>
-
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-
             <label for="message">Mensagem:</label>
             <textarea id="message" name="message" required></textarea>
-
             <button type="submit">Enviar</button>
         </form>
+        <div id="form-response"></div>
     </section>
 
     <footer>
         <p>&copy; 2024 Tecnologias do Campo. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const contactForm = document.getElementById("contact-form");
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            contactForm.addEventListener("submit", function(event) {
-                event.preventDefault();
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
 
-                const name = document.getElementById("name").value;
-                const email = document.getElementById("email").value;
-                const message = document.getElementById("message").value;
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-                if (name && email && message) {
-                   
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+#tech-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#tech-list li {
+    background-color: #f4f4f4;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const techList = document.getElementById('tech-list');
+
+    const technologies = [
+        'Drones para Monitoramento',
+        'Sensores de Umidade do Solo',
+        'Tratores Autônomos',
+        'Sistemas de Irrigação Inteligente',
+        'Análise de Dados Agrícolas'
+    ];
+
+    technologies.forEach(tech => {
+        const li = document.createElement('li');
+        li.textContent = tech;
+        techList.appendChild(li);
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const responseDiv = document.getElementById('form-response');
+
+        responseDiv.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada com sucesso.</p>`;
+
+        contactForm.reset();
+    });
+});
