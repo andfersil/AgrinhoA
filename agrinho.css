@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologias do Campo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        #tech-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #tech-list li {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .gallery-container img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.1);
+        }
+
+        #news-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-item {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        #blog-posts {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-post {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        #map-container {
+            height: 400px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+        }
+
+        form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tecnologias do Campo</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#tech">Tecnologias</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#news">Notícias</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Bem-vindo ao site de Tecnologias do Campo</h2>
+        <p>Descubra as mais recentes inovações no campo da agricultura.</p>
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="images/drone.jpg" alt="Drones para Monitoramento">
+                <img src="images/sensor.jpg" alt="Sensores de Umidade do Solo">
+                <img src="images/tractor.jpg" alt="Tratores Autônomos">
+            </div>
+        </div>
+    </section>
+
+    <section id="tech">
+        <h2>Tecnologias Agrícolas</h2>
+        <ul id="tech-list">
+            <!-- Lista de tecnologias será preenchida por JavaScript -->
+        </ul>
+    </section>
+
+    <section id="gallery">
+        <h2>Galeria de Imagens</h2>
+        <div class="gallery-container">
+            <img src="images/drone.jpg" alt="Drones para Monitoramento">
+            <img src="images/sensor.jpg" alt="Sensores de Umidade do Solo">
+            <img src="images/tractor.jpg" alt="Tratores Autônomos">
+        </div>
+    </section>
+
+    <section id="news">
+        <h2>Notícias Recentes</h2>
+        <div id="news-container">
+            <!-- Notícias serão preenchidas por JavaScript -->
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <div id="blog-posts">
+            <!-- Posts do blog serão preenchidos por JavaScript -->
+        </div>
+    </section>
+
+    <section id="map">
+        <h2>Mapa Interativo</h2>
+        <div id="map-container"></div>
+    </section>
+
+    <section id="contact">
+        <h2>Contato</h2>
+        <form id="contact-form">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="form-response"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Tecnologias do Campo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const techList = document.getElementById('tech-list');
+            const technologies = [
+                'Drones para Monitoramento',
+                'Sensores de Umidade do Solo',
+                'Tratores Autônomos',
+                'Sistemas de Irrigação Inteligente',
+                'Análise de Dados Agrícolas'
+            ];
+
+            technologies.forEach(tech => {
+                const li = document.createElement('li');
+                li.textContent = tech;
+                techList.appendChild(li);
+            });
+
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                const responseDiv = document.getElementById('form-response');
+                responseDiv.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada com sucesso.</p>`;
+                contactForm.reset();
+            });
+
+            // Carrossel de imagens
+            let carouselIndex = 0;
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const images = document.querySelectorAll('.carousel-slide img');
+            function nextSlide() {
+                carouselIndex = (carouselIndex + 1) % images.length;
+                carouselSlide.style.transform = `translateX(${-carouselIndex * 100}%)`;
+            }
+            setInterval(nextSlide, 3000);
+
+            // Fetch and display news articles
+            fetchNews();
+            function fetchNews() {
+                const newsContainer = document.getElementById('news-container');
+                const newsArticles = [
+                    { title: 'Novos Drones para Agricultura', content: 'Os drones estão revolucionando a agricultura.' },
+                    { title: 'Sensores de Umidade do Solo Avançados', content: 'Sensores ajudam a monitorar a umidade com precisão.' },
+                    { title: 'Tratores Autônomos Ganham Popularidade', content: 'Tratores autônomos estão se tornando comuns nas fazendas.' }
+                ];
+
+                newsArticles.forEach(article => {
+                    const newsItem = document.createElement('div');
+                    newsItem.classList.add('news-item');
+                    newsItem.innerHTML = `<h3>${article.title}</h3><p>${article.content}</p>`;
+                    newsContainer.appendChild(newsItem);
+                });
+            }
+
+            // Fetch and display blog posts
+            fetchBlogPosts();
+            function fetchBlogPosts() {
+                const blogContainer = document.getElementById('blog-posts');
+                const blogPosts = [
+                    { title: 'A Importância dos Drones', content: 'Drones estão transformando a agricultura moderna.' },
+                    { title: 'Como Sensores de Solo Funcionam', content: 'Sensores de solo permitem uma melhor gestão da irrigação.' },
+                    { title: 'Futuro dos Tratores Autônomos', content: 'Tratores autônomos são o futuro da agricultura.' }
+                ];
+
+                blogPosts.forEach(post => {
+                    const blogPost = document.createElement('div');
+                    blogPost.classList.add('blog-post');
+                    blogPost.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
+                    blogContainer.appendChild(blogPost);
+                });
+            }
+
+            // Initialize map
+            mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+            const map = new mapboxgl.Map({
+                container: 'map-container',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [-74.5, 40],
+                zoom: 9
+            });
+
+        });
+    </script>
+</body>
+</html>
