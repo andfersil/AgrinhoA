@@ -4,7 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnologias do Campo</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        #tech-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #tech-list li {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .gallery-container img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.1);
+        }
+
+        #news-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-item {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .testimonials-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        blockquote {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+        }
+
+        form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,6 +138,9 @@
             <ul>
                 <li><a href="#home">Início</a></li>
                 <li><a href="#tech">Tecnologias</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#news">Notícias</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
         </nav>
@@ -28,6 +156,36 @@
         <ul id="tech-list">
             <!-- Lista de tecnologias será preenchida por JavaScript -->
         </ul>
+    </section>
+
+    <section id="gallery">
+        <h2>Galeria de Imagens</h2>
+        <div class="gallery-container">
+            <img src="images/drone.jpg" alt="Drones para Monitoramento">
+            <img src="images/sensor.jpg" alt="Sensores de Umidade do Solo">
+            <img src="images/tractor.jpg" alt="Tratores Autônomos">
+        </div>
+    </section>
+
+    <section id="news">
+        <h2>Notícias Recentes</h2>
+        <div id="news-container">
+            <!-- Notícias serão preenchidas por JavaScript -->
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>Depoimentos</h2>
+        <div class="testimonials-container">
+            <blockquote>
+                <p>"As novas tecnologias estão revolucionando nossa maneira de trabalhar no campo!"</p>
+                <cite>- João Silva, Agricultor</cite>
+            </blockquote>
+            <blockquote>
+                <p>"Os sensores de umidade aumentaram nossa eficiência de irrigação em 30%!"</p>
+                <cite>- Maria Santos, Produtora Rural</cite>
+            </blockquote>
+        </div>
     </section>
 
     <section id="contact">
@@ -48,119 +206,59 @@
         <p>&copy; 2024 Tecnologias do Campo. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const techList = document.getElementById('tech-list');
+
+            const technologies = [
+                'Drones para Monitoramento',
+                'Sensores de Umidade do Solo',
+                'Tratores Autônomos',
+                'Sistemas de Irrigação Inteligente',
+                'Análise de Dados Agrícolas'
+            ];
+
+            technologies.forEach(tech => {
+                const li = document.createElement('li');
+                li.textContent = tech;
+                techList.appendChild(li);
+            });
+
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                const responseDiv = document.getElementById('form-response');
+
+                responseDiv.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada com sucesso.</p>`;
+
+                contactForm.reset();
+            });
+
+            // Fetch and display news articles
+            fetchNews();
+
+            function fetchNews() {
+                const newsContainer = document.getElementById('news-container');
+
+                // Simulando fetch de uma API
+                const newsArticles = [
+                    { title: 'Novos Drones para Agricultura', content: 'Os drones estão revolucionando a agricultura.' },
+                    { title: 'Sensores de Umidade do Solo Avançados', content: 'Sensores ajudam a monitorar a umidade com precisão.' },
+                    { title: 'Tratores Autônomos Ganham Popularidade', content: 'Tratores autônomos estão se tornando comuns nas fazendas.' }
+                ];
+
+                newsArticles.forEach(article => {
+                    const newsItem = document.createElement('div');
+                    newsItem.classList.add('news-item');
+                    newsItem.innerHTML = `<h3>${article.title}</h3><p>${article.content}</p>`;
+                    newsContainer.appendChild(newsItem);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-}
-
-#tech-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#tech-list li {
-    background-color: #f4f4f4;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-top: 10px;
-}
-
-form input, form textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-}
-
-form button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #45a049;
-}
-
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-document.addEventListener('DOMContentLoaded', function() {
-    const techList = document.getElementById('tech-list');
-
-    const technologies = [
-        'Drones para Monitoramento',
-        'Sensores de Umidade do Solo',
-        'Tratores Autônomos',
-        'Sistemas de Irrigação Inteligente',
-        'Análise de Dados Agrícolas'
-    ];
-
-    technologies.forEach(tech => {
-        const li = document.createElement('li');
-        li.textContent = tech;
-        techList.appendChild(li);
-    });
-
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        const responseDiv = document.getElementById('form-response');
-
-        responseDiv.innerHTML = `<p>Obrigado, ${name}! Sua mensagem foi enviada com sucesso.</p>`;
-
-        contactForm.reset();
-    });
-});
