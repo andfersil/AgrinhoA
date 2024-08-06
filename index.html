@@ -1,286 +1,230 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnologias do Campo</title>
     <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
             color: #e0e0e0;
-            background-color: #000000;
         }
 
         header {
-            background-color: #003300;
-            color: #ffffff;
-            padding: 20px 0;
-            border-bottom: 2px solid #004d00;
-        }
-
-        header .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background-color: #1b1b1b;
+            color: #00ff00;
+            padding: 1em 0;
+            text-align: center;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            margin: 0;
         }
 
         nav ul {
             list-style: none;
-            display: flex;
+            padding: 0;
+            text-align: center;
         }
 
         nav ul li {
-            margin-left: 20px;
+            display: inline;
+            margin: 0 1em;
         }
 
         nav ul li a {
-            color: #ffffff;
+            color: #00ff00;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-weight: bold;
         }
 
         nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .hero {
-            background-image: url('https://via.placeholder.com/1920x600?text=Tecnologias+do+Campo');
-            background-size: cover;
-            background-position: center;
             color: #ffffff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
         }
 
         section {
-            padding: 60px 20px;
+            padding: 2em;
         }
 
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background-color: #003300;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000000;
-            border-radius: 8px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .form-container {
-            background-color: #003300;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-container input,
-        .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #004d00;
-            border-radius: 4px;
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        .form-container button {
-            background-color: #004d00;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .form-container button:hover {
-            background-color: #003300;
-        }
-
-        footer {
-            background-color: #003300;
-            color: #ffffff;
-            padding: 20px 0;
-            border-top: 2px solid #004d00;
+        #home {
             text-align: center;
         }
 
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
+        #home img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin-top: 1em;
+            border-radius: 10px;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        article {
+            margin: 2em 0;
         }
 
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
+        article img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+        }
 
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
+        #noticias .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
-            nav ul li {
-                margin: 10px 0;
-            }
+        #noticias .news-container article {
+            width: 30%;
+            background-color: #1b1b1b;
+            padding: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin: 1em 0;
+            border-radius: 10px;
+        }
+
+        #contato form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contato label {
+            margin: 0.5em 0 0.2em;
+        }
+
+        #contato input,
+        #contato textarea {
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+        }
+
+        #contato button {
+            padding: 0.7em;
+            background-color: #00ff00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contato button:hover {
+            background-color: #009900;
+        }
+
+        footer {
+            background-color: #1b1b1b;
+            color: #00ff00;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Tecnologias do Campo</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#noticias">Notícias</a></li>
-                    <li><a href="#tecnologias">Tecnologias</a></li>
-                    <li><a href="#videos">Vídeos</a></li>
-                    <li><a href="#faq">Perguntas Frequentes</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Tecnologias do Campo</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="hero" id="home">
-        <h2>Transformando o Campo com Tecnologia</h2>
-        <p>Explore como inovações tecnológicas estão revolucionando a agricultura e a gestão rural.</p>
-    </div>
-
-    <section id="noticias">
-        <div class="container">
-            <h2>Notícias</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x250?text=Noticia+1" alt="Notícia 1">
-                    <h3>Notícia 1</h3>
-                    <p>Descrição breve sobre a primeira notícia. Saiba mais sobre os últimos avanços e tendências.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x250?text=Noticia+2" alt="Notícia 2">
-                    <h3>Notícia 2</h3>
-                    <p>Descrição breve sobre a segunda notícia. Acompanhe as atualizações mais recentes do setor.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x250?text=Noticia+3" alt="Notícia 3">
-                    <h3>Notícia 3</h3>
-                    <p>Descrição breve sobre a terceira notícia. Fique por dentro dos eventos e inovações no campo.</p>
-                </div>
-            </div>
-        </div>
+    <section id="home">
+        <h2>Bem-vindo ao nosso site</h2>
+        <p>Explore as últimas inovações tecnológicas que estão transformando o campo. A tecnologia tem revolucionado a agricultura, trazendo soluções que aumentam a produtividade e a eficiência, ao mesmo tempo em que reduzem os custos e o impacto ambiental. Descubra como essas tecnologias podem transformar a sua vida e o seu trabalho no campo.</p>
+        <img src="img/depositphotos_433024064-stock-photo-farmer-preparing-fly-drones-survey.jpg" alt="Tecnologia no campo">
     </section>
 
     <section id="tecnologias">
-        <div class="container">
-            <h2>Tecnologias</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x250?text=Monitoramento" alt="Monitoramento de Culturas">
-                    <h3>Monitoramento de Culturas</h3>
-                    <p>Utilização de drones e sensores para monitorar a saúde das plantações e otimizar o uso de recursos.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x250?text=Automacao" alt="Automação">
-                    <h3>Automação</h3>
-                    <p>Máquinas agrícolas automatizadas para plantio, colheita e manejo.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x250?text=Big+Data" alt="Big Data">
-                    <h3>Big Data</h3>
-                    <p>Análise de grandes volumes de dados para melhorar a tomada de decisões e a eficiência.</p>
-                </div>
-                <div class="card">
-                    <img src="https://via.placeholder.com/400x250?text=Inteligencia+Artificial" alt="Inteligência Artificial">
-                    <h3>Inteligência Artificial</h3>
-                    <p>Sistemas de IA para prever doenças e pragas, e otimizar as operações agrícolas.</p>
-                </div>
-            </div>
+        <h2>Tecnologias do Campo</h2>
+        <article>
+            <h3>Máquinas Agrícolas Inteligentes</h3>
+            <p>As máquinas agrícolas inteligentes são equipadas com inteligência artificial e sistemas avançados de controle. Elas são capazes de realizar tarefas como plantio, colheita e pulverização com alta precisão, reduzindo o desperdício e aumentando a eficiência. Essas máquinas também podem ser conectadas a redes de dados para monitoramento remoto e manutenção preditiva.</p>
+            <img src="img/maquina-agricola-jacto1.webp" alt="Máquinas Agrícolas Inteligentes">
+        </article>
+        <article>
+            <h3>Sensores de Solo</h3>
+            <p>Sensores de solo são dispositivos que medem a umidade, a temperatura e a composição do solo em tempo real. Eles ajudam os agricultores a entender melhor as condições do solo e a tomar decisões informadas sobre irrigação e fertilização. Isso resulta em um uso mais eficiente dos recursos e em plantas mais saudáveis e produtivas.</p>
+            <img src="img/images.jpeg" alt="sensores de solo">
+        </article>
+        <article>
+            <h3>Sistemas de Irrigação Automatizados</h3>
+            <p>Os sistemas de irrigação automatizados utilizam sensores e controladores para fornecer a quantidade exata de água que as plantas precisam, quando precisam. Esses sistemas podem ser programados para operar em horários específicos e ajustados com base nas condições climáticas e nos dados do solo. Isso ajuda a economizar água e a garantir que as plantas recebam a hidratação adequada.</p>
+            <img src="img/images (1).jpeg" alt="sistema de irrigação">
+        </article>
+    </section>
+
+    <section id="noticias">
+        <h2>Últimas Notícias</h2>
+        <div class="news-container">
+            <article>
+                <h3>Nova Tecnologia de Drones</h3>
+                <p>Drones estão sendo usados para monitoramento e pulverização de culturas. Eles permitem a observação detalhada das plantações, identificando áreas que precisam de atenção especial. Com câmeras de alta resolução e sensores avançados, os drones ajudam a detectar doenças, pragas e deficiências nutricionais nas plantas.</p>
+            </article>
+            <article>
+                <h3>Aplicativos para Gestão Agrícola</h3>
+                <p>Aplicativos móveis e softwares de gestão agrícola estão se tornando ferramentas essenciais para os agricultores modernos. Eles ajudam a monitorar todas as atividades da fazenda, desde o plantio até a colheita, incluindo o controle de estoque, a gestão financeira e a análise de dados. Esses aplicativos permitem uma tomada de decisão mais informada e estratégica.</p>
+            </article>
+            <article>
+                <h3>Energia Renovável no Campo</h3>
+                <p>A implementação de fontes de energia renovável, como painéis solares e turbinas eólicas, está ganhando popularidade no setor agrícola. Essas tecnologias não apenas reduzem os custos com energia, mas também tornam as operações agrícolas mais sustentáveis. A energia renovável pode ser usada para alimentar equipamentos agrícolas, sistemas de irrigação e outras infraestruturas da fazenda.</p>
+            </article>
         </div>
     </section>
 
-    <section id="videos">
-        <div class="container">
-            <h2>Vídeos</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="video-container" style="margin-top: 20px;">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="contact-form">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 
-    <section id="faq">
-        <div class
+    <footer>
+        <p>&copy; 2024 Tecnologias do Campo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("contact-form");
+
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+
+                if (name && email && message) {
+                    alert(`Obrigado pela sua mensagem, ${name}!`);
+                    contactForm.reset();
+                } else {
+                    alert("Por favor, preencha todos os campos.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
